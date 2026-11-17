@@ -3,7 +3,9 @@ package com.joseneto.workshop.config;
 import java.time.Instant;
 import java.util.Arrays;
 
+import com.joseneto.workshop.entities.Category;
 import com.joseneto.workshop.entities.enums.OrderStatus;
+import com.joseneto.workshop.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
@@ -24,8 +26,18 @@ public class TestConfig implements CommandLineRunner{
     @Autowired 
     private OrderRepository orderRepository;
 
+    @Autowired
+    private CategoryRepository categoryRepository;
+
     @Override
     public void run(String... args) throws Exception {
+
+        Category cat1 = new Category(null, "Eletronics");
+        Category cat2 = new Category(null, "Books");
+        Category cat3 = new Category(null, "Computers");
+
+        categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
+
         User u1 = new User(null, "José", "jose@gmail.com", "9888888888", "12345");
         User u2 = new User(null, "Renata", "renata@gmail.com", "9999999999", "12345");
 
