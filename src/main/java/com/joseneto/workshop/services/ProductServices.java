@@ -1,7 +1,7 @@
 package com.joseneto.workshop.services;
 
-import com.joseneto.workshop.entities.Category;
-import com.joseneto.workshop.repositories.CategoryRepository;
+import com.joseneto.workshop.entities.Product;
+import com.joseneto.workshop.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,17 +9,17 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CategoryService {
+public class ProductServices {
 
     @Autowired
-    private CategoryRepository repository;
+    private ProductRepository repository;
 
-    public List<Category> findAll(){
+    public List<Product> findAll(){
         return repository.findAll();
     }
 
-    public Category findById(Long id){
-        Optional<Category> obj = repository.findById(id);
+    public Product findById(Long id){
+        Optional<Product> obj = repository.findById(id);
         return obj.get();
     }
 }

@@ -1,7 +1,7 @@
 package com.joseneto.workshop.resources;
 
 import com.joseneto.workshop.entities.Category;
-import com.joseneto.workshop.services.CategoryService;
+import com.joseneto.workshop.services.CategoryServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +16,7 @@ import java.util.List;
 public class CategoryResource {
 
     @Autowired
-    private CategoryService services;
+    private CategoryServices services;
 
     @GetMapping
     public ResponseEntity<List<Category>> findAll(){
