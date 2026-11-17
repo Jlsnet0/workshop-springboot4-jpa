@@ -1,7 +1,6 @@
 package com.joseneto.workshop.resources;
 
 import com.joseneto.workshop.entities.Order;
-import com.joseneto.workshop.entities.User;
 import com.joseneto.workshop.services.OrderServices;
 
 
